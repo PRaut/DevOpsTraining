@@ -3,43 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Calculate product price</title>
-<script type="text/javascript">
-
-function createProduct(custname ,  prdname , prdprice, discoundedPrice){
-	this.custname = custname;
-	this.prdname = prdname;
-	this.prdprice = prdprice;
-	this.discoundedPrice = discoundedPrice;
-}
-
-function calculate(){
-	var custName = document.forms["detailsform"]["cname"].value;
-	var prdName = document.forms["detailsform"]["prdname"].value;
-	var prdPrice = document.forms["detailsform"]["prdprice"].value;
-	var country = document.forms["detailsform"]["country"].value;h
-	
-	alert(custName + ", "+ prdName + ", " + prdPrice);
-	
-	if(country === "INDIA"){
-		val discountedPrice = prdPrice - (prdPrice * 0.1);
-		var product = new createProduct(custName , prdName , prdPrice, discoundedPrice);
-		localStorage.setItem("product", product);	
-	}else if(country === "USA"){
-		val discountedPrice = prdPrice - (prdPrice * 0.5);
-		var product = new createProduct(custName , prdName , prdPrice, discoundedPrice);
-		localStorage.setItem("product", product);	
-	}
-	
-	
-	//console.log(product.custName);
-	//alert(product);
-	
-	return true;
-}
-</script>
 </head>
 <body>
-	<form method="get" action ="product.html" name="detailsform" onsubmit="return calculate();">
+	<form method="get" action ="product.html" name="detailsform">
 		<table>
 			<tr>
 				<td colspan="2"><h4>Product Details</h4></td>

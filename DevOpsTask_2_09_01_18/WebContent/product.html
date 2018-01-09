@@ -6,11 +6,78 @@
 </head>
 <body>
 	<h3>Product Details</h3>
+	<hr/>
+	<div id="data"></div>
 	<script type="text/javascript">
-		document.write("Customer Name:  "+localStorage.getItem(product.custName) + "</br>");
-		document.write("Product Name: "+localStorage.getItem(product.prdname) + "</br>");
-		document.write("Product Price: "+localStorage.getItem(product.prdprice) + "</br>");
-		document.write("Discounted Price : "+localStorage.getItem(product.discoundedPrice) + "</br>");
+		
+		function processForm() {
+			var parameters = location.search.substring(1).split("&");
+			
+			var temp = parameters[0].split("=");
+			console.log("P0: " + temp);
+			trnsId = unescape(temp[1]);
+			console.log("trnsId: " + trnsId);
+			
+			var temp = parameters[1].split("=");
+			console.log("P1: " + temp);
+			prdName = unescape(temp[1]);
+			console.log("prdName: " + prdName);
+		
+			
+			var temp = parameters[2].split("=");
+			console.log("P2: " + temp);
+			prdPrice = unescape(temp[1]);
+			console.log("prdPrice: " + prdPrice);
+			
+			var temp = parameters[3].split("=");
+			console.log("P3: " + temp);
+			prdQty = unescape(temp[1]);
+			console.log("prdQty: " + prdQty);
+			
+			var temp = parameters[4].split("=");
+			console.log("P4: " + temp);
+			custName = unescape(temp[1]);
+			console.log("custName: " + custName);
+			
+			/*
+			var temp = parameters[5].split("=");
+			console.log("P5: " + temp);
+			cdob = unescape(temp[1]);
+			console.log("cdob: " + cdob);
+
+			var temp = parameters[6].split("=");
+			console.log("P6: " + temp);
+			ccity = unescape(temp[1]);
+			console.log("ccity: " + ccity);
+			
+			var temp = parameters[7].split("=");
+			console.log("P7: " + temp);
+			cstate = unescape(temp[1]);
+			console.log("cstate: " + cstate);
+			*/
+			
+			var temp = parameters[8].split("=");
+			console.log("P8: " + temp);
+			ccountry = unescape(temp[1]);
+			console.log("ccountry: " + ccountry);
+
+
+			if(ccountry === "INDIA"){
+				discPrice = prdPrice - (prdPrice * 0.1);
+			}else{
+				discPrice = prdPrice - (prdPrice * 0.05);
+			}
+			
+			
+			
+			document.getElementById("data").innerHTML = "<strong>Customer Name: </strong>" + custName +"<br/>"+
+														"<strong>Product Name: </strong>" + prdName + "<br/>" +
+														"<strong>Product Price: </strong>"+ prdPrice + "<br/>" +
+														"<strong>Discounted Price: </strong>"+ discPrice ;
+		}
+		
+		processForm();
 	</script>
+	<hr/>
 </body>
 </html>
