@@ -1,0 +1,18 @@
+Task 1:
+---------
+
+Task for Today Based upon HTML and JavaScript..
+
+Create a WebSite using HTML based upon below Criteria.
+
+1. Login Page :- It will accept userID and Password, Which will be checked through business logic, If  ID and Password is correct User will be redirected to Product Page.
+
+2. Create Product Page and accept below details from User.
+        ProductID
+        ProductName
+        ProductPrice
+        ProductQuantity
+        
+    When user will click submit button display the details to productDisplay Page.
+
+

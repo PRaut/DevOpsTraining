@@ -1,0 +1,20 @@
+Task:
+-----
+
+Create a WebSite to accept Transaction Details Like
+TransactionID
+ProductName
+Productprice
+ProductQuantity
+CustomerName
+CustomerGender
+CustomerDOB
+CustomerCity
+CustomerState
+CustomerCountry
+1. Calculate the Total price of Product after accepting all the data.
+2. If Total Amount in Transaction is greater than 10000 and country is INDIA give 10% discount on total Amount. 
+1. Calculate the Total price of Product after accepting all the data.
+2. If Total Amount in Transaction is greater than 10000 and country is USA give 5% discount on total Amount.
+
+Display CustomerName, ProductName, TotalAmount and TotalAmount after discount in Display Page.
