@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Details Page</title>
+<script type="text/javascript" src="js/main.js">
+</script>
+</head>
+<body>
+	<h3>Product Details</h3>
+	<form action="productDisplay.html" method="get" name="prdDetailsForm" onsubmit="return storeAndRedirect();">
+		<table>
+			<tr>
+				<td>Product ID:</td>
+				<td><input type="text" name="prdId" /></td>
+			</tr>
+
+			<tr>
+				<td>Product Name:</td>
+				<td><input type="text" name="prdName" /></td>
+			</tr>
+
+			<tr>
+				<td>Product Price:</td>
+				<td><input type="text" name="prdPrice" /></td>
+			</tr>
+
+			<tr>
+				<td>Product Quantity:</td>
+				<td><input type="text" name="prdQty" /></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+			<tr>
+		</table>
+	</form>
+</body>
+</html>

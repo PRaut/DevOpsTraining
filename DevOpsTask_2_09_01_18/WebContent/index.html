@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculate product price</title>
+<script type="text/javascript">
+
+function createProduct(custname ,  prdname , prdprice, discoundedPrice){
+	this.custname = custname;
+	this.prdname = prdname;
+	this.prdprice = prdprice;
+	this.discoundedPrice = discoundedPrice;
+}
+
+function calculate(){
+	var custName = document.forms["detailsform"]["cname"].value;
+	var prdName = document.forms["detailsform"]["prdname"].value;
+	var prdPrice = document.forms["detailsform"]["prdprice"].value;
+	var country = document.forms["detailsform"]["country"].value;h
+	
+	alert(custName + ", "+ prdName + ", " + prdPrice);
+	
+	if(country === "INDIA"){
+		val discountedPrice = prdPrice - (prdPrice * 0.1);
+		var product = new createProduct(custName , prdName , prdPrice, discoundedPrice);
+		localStorage.setItem("product", product);	
+	}else if(country === "USA"){
+		val discountedPrice = prdPrice - (prdPrice * 0.5);
+		var product = new createProduct(custName , prdName , prdPrice, discoundedPrice);
+		localStorage.setItem("product", product);	
+	}
+	
+	
+	//console.log(product.custName);
+	//alert(product);
+	
+	return true;
+}
+</script>
+</head>
+<body>
+	<form method="get" action ="product.html" name="detailsform" onsubmit="return calculate();">
+		<table>
+			<tr>
+				<td colspan="2"><h4>Product Details</h4></td>
+			</tr>
+			<tr>
+				<td>Transaction Id: </td>
+				<td><input type="text" name="trnsid" /></td>
+			</tr>
+			<tr>
+				<td>Product Name: </td>
+				<td><input type="text" name="prdname" /></td>
+			</tr>
+			
+			<tr>
+				<td>Product Price: </td>
+				<td><input type="text" name="prdprice" /></td>
+			</tr>
+			
+			<tr>
+				<td>Product Quantity: </td>
+				<td><input type="text" name="prdqty" /></td>
+			</tr>
+			
+			<tr>
+			<td colspan="2"><h4>Customer Details</h4></td>
+			</tr>
+			
+			<tr>
+				<td>Customer Name: </td>
+				<td><input type="text" name="cname /"></td>
+			</tr>
+			<tr>
+				<td>Customer Gender: </td>
+				<td><input type="radio" name="gender">Male
+				<input type="radio" name="gender">Female </td>
+			</tr>
+			
+			<tr>
+				<td>Customer DOB:</td>
+				<td><input type="date" name="cdob"></td>
+			</tr>
+			
+			<tr>
+				<td>Customer City:</td>
+				<td><input type="text" name="ccity"></td>
+			</tr>
+			
+			<tr>
+				<td>Customer State:</td>
+				<td><input type="text" name="cstate"></td>
+			</tr>
+			
+			<tr>
+				<td>Customer Country:</td>
+				<td>
+					<select name="country">
+						<option value="INDIA"> INDIA</option>
+						<option value="USA">USA</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><button type="submit" value="submit">Calculate Product Price</button></td>
+				<td><button type="reset">Clear</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
