@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery demo 11-01-18</title>
+    
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("img").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+                });
+            });
+            
+            $("#btn2").click(function(){
+                $("p").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">     
+        <div style="position:relative;">
+            <img id="img" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
+            
+            <div style="position:absolute; width:0px;left:15px;top:200px;">
+                <button id="btn1" class="btn btn-success btn-below" type="button">Click to enlarge image</button>
+            </div>
+        
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+            
+            <div  style="position:absolute;width:0px;left:510px;top:200px;">
+                <button id ="btn2" class="btn btn-success btn-below" type="button">Hide paragraph</button>
+            </div>
+        </div>
+    </div>        
+</body>
+</html>

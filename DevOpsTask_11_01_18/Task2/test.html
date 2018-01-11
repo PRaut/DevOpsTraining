@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">
+        .imgButton
+        {
+            text-align:center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#img").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+                });
+            });
+            
+            // else part not working
+            $("#btn2").click(function(){
+               if($("#para").not(":hidden")){
+                    $("#para").hide();
+                    $("#btn2").val('SHOW');
+                  }else{
+                        $("#para").show();
+                        $("#btn2").val('HIDE');
+                    }
+            });
+        });
+        
+    </script>
+</head>
+<body>
+        <table>
+            <tr>
+                <td>
+                  <div class="imgContainer">
+                        <div>
+                            <img id = "img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPy7ZnI46zizXRVoXLbV4Gl6LamFU6g5pqtJj1ijxnO8i-gJWp" width="100px" height="100px"/>
+                            </div>
+                            <div class="imgButton">
+                                <button id = "btn1" value="btn1">btn1</button>
+                        </div>
+                    </div>
+                </td>
+            <td>
+                <div class="imgContainer">
+                        <div>
+                            <p id="para">This is demo paragraph</p>
+                        </div>
+                        <div class="imgButton">
+                            <button id="btn2">SHOW</button>
+                        </div>
+                </div>
+            </td>
+            </tr>
+        </table>
+    </body>
+</html>
